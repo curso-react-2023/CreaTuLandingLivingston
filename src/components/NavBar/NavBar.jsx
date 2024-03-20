@@ -6,35 +6,37 @@ import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar(props){
     
+    /* 
+    Lista de botones de categoris actual de la tienda, debe hacerse dinamica
+    */
     const botones = [
         {
             id: 1,
             etiqueta: 'Remeras',
-            className: 'navButton',
-            seleccionado: true
+            seleccionado: false
         },
         {
             id: 2,
             etiqueta: 'Pantalones',
-            className: 'navButton',
             seleccionado: false
         },
         {
             id: 3,
             etiqueta: 'Vestidos',
-            className: 'navButton',
             seleccionado: false
         },
         {
             id: 4,
             etiqueta: 'Accesorios',
-            className: 'navButton',
             seleccionado: false
         }
     ];
 
+    /*
+    funciones para manejar la lista de botones y el click de cada uno
+    */
     const[listaBotones, setBotones] = useState(botones);
-
+    
     const cambioCategoria = (categoryId,seleccionado) => {
         if (!seleccionado){
             const botonesActualizados = listaBotones.map(boton => {
@@ -50,6 +52,13 @@ function NavBar(props){
         }
       }
 
+    /*
+    navBar
+    presenta la barra de navegacion de categorias:
+    Logo
+    Lista de botones del menu: utilizando el state correspondiente
+    cartWidget: le pasa la cantidad de productos que debe recibir del cart
+    */  
     return(
         <div id='navBar' className='NavBar'>
             <NavLogo/>
@@ -65,7 +74,7 @@ function NavBar(props){
                     )
                 }
             </div> 
-            <CartWidget>5</CartWidget>
+            <CartWidget>{props.cantProducts}</CartWidget>
         </div>
         )
 }   

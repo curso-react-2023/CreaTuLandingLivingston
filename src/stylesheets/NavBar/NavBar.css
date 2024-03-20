@@ -1,0 +1,19 @@
+.NavBar {
+    min-width: 768px;
+    display: flex;
+    height: 100px;
+    background-color: #F1F7E6;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Categories{
+    min-width: 468px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}

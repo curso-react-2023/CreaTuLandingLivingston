@@ -1,0 +1,9 @@
+.navButton{
+    border-radius: unset;
+    background-color: #DDEBC4;
+    min-width: 200px;
+}
+
+.navButton:hover{
+    background-color:#E5D1A6;
+}

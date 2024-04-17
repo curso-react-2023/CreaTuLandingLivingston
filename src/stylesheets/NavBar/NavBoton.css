@@ -17,7 +17,12 @@
     background-color:#E5D1A6;
 }
 
+<<<<<<< Updated upstream
 .selected {
     background-color: #BBD885;
+=======
+.active {
+    background-color: #66C5B9;
+>>>>>>> Stashed changes
     cursor: default;
 }

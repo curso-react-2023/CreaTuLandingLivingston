@@ -1,0 +1,31 @@
+.pageNotFoundContainer{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #F1F7E6 ;
+}
+
+.pageNotFound{
+    width: 800px;
+    height: 400px;
+    background-image: url(/images/pageNotFoundBack.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 10px 0 10px 0;
+}
+
+.pageNotFoundWorker{
+    width: 200px;
+}
+
+.pageNotFoundMessge{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 0 30px 30px 30px;
+    color: white;
+}

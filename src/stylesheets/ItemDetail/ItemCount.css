@@ -1,0 +1,35 @@
+.counter{
+    width:150px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding:5px;
+}
+
+.counterButtonContainer{
+    width:100%;
+    display:flex;
+    flex-wrap: 1 1;
+}
+
+.counterButton{
+    width: 30px;
+    height: 20px;
+    font-size: .9em;
+    border-radius: 5px;
+    background-color: #AAC0BC;
+}
+
+.counterDisplay{
+    width: 150px;
+    height: 20px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.counterAddCart{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #AAC0BC;
+}

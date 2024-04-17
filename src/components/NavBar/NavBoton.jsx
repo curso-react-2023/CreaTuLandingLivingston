@@ -3,14 +3,13 @@ import '../../stylesheets/NavBar/NavBoton.css'
 
 /*
 boton del navBar de categorias
-Parametros esperados:
-id: id de la categoria de productos que corresponde
-seleccionado: indica si el boton corresponde a la categoria que se muestra actualmente en el itemListContainer
-children: texto indicando el nombre de la categoria
-handleClick: funcion a ejecutar cuando se clickea un boton
 */
 
+<<<<<<< Updated upstream
 function NavBoton(props){
+=======
+function NavBoton({dirUrl, etiqueta}){
+>>>>>>> Stashed changes
     return(
       <button
       id={props.id} 

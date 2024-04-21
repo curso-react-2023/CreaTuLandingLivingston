@@ -1,28 +1,32 @@
 .navButton{
     height: 70px;
-    border-radius: unset;
     min-width: 200px;
     max-width: 400px;
     user-select: none;
     border: none;
-
-}
-
-.click{
     background-color: #DDEBC4;
     cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color:black;
 }
 
-.click:hover{
-    background-color:#E5D1A6;
+.navButton:hover{
+    background-color:#F7D4C6;
 }
 
-<<<<<<< Updated upstream
-.selected {
-    background-color: #BBD885;
-=======
 .active {
-    background-color: #66C5B9;
->>>>>>> Stashed changes
+    background-color: #DEAD9A;
     cursor: default;
+}
+
+.active:hover {
+    background-color: #DEAD9A;
+}
+
+.navButtonText{
+    height: 30px;
+    text-align: center;
 }

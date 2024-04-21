@@ -1,11 +1,8 @@
 .itemDetailContainer{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 20px;
     justify-content: center;
     align-items:center;
     min-width: 800px;
     min-height: 600px;
-    background-color: #F1F7E6 ;
-    padding-bottom: 10px;
 }

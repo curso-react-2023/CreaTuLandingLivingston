@@ -10,13 +10,15 @@ function ItemList({listaProductos}){
     */  
     return(
         <div id='itemList' className='itemList'>
-            {    
+            {
+            listaProductos.length>0?    
             listaProductos.map((producto) =>
                 < ItemListCard
                     key={producto.id}
                     {...producto}
                     />
                 )
+                :'No se encontraron productos para esta categoria.'
             }
         </div> 
         )

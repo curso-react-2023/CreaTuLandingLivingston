@@ -2,10 +2,11 @@
     min-width: 768px;
     display: flex;
     height: 100px;
-    background-color: #CFEC9B;
+    background-color: #BDE9E3;
     padding-right: 10px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 
 }
 

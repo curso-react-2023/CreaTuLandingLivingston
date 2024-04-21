@@ -1,23 +1,13 @@
-<<<<<<< Updated upstream
-import '../../stylesheets/ItemListContainer/ItemListContainer.css'
-
-=======
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import '../../stylesheets/ItemListContainer/ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
 import Loader from "../Loader/Loader";
 import { getProductosPorCategoria } from '../../data/AsyncMock';
->>>>>>> Stashed changes
 /*
 Contenedor de la lista de productos,  maneja estado de los productos
 */
 
-<<<<<<< Updated upstream
-function ItemListContainer(props){
-    return(
-        <div id='itemListContainer' className='itemListContainer'><div className='bienvenida'>{props.children}</div></div>
-=======
 function ItemListContainer(){
 
     /*
@@ -42,7 +32,6 @@ function ItemListContainer(){
                 listaProductos={listaProductos}/>
             }
         </div>
->>>>>>> Stashed changes
     );
 }
 

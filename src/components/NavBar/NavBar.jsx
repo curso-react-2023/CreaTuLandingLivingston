@@ -1,56 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getCategories } from '../../data/AsyncMock';
 import '../../stylesheets/NavBar/NavBar.css';
 import NavBoton from './NavBoton';
 import NavLogo from './NavLogo';
 import CartWidget from '../CartWidget/CartWidget';
+import Loader from "../Loader/Loader";
 
 function NavBar(props){
-    
-    /* 
-    Lista de botones de categoris actual de la tienda, debe hacerse dinamica
-    */
-    const botones = [
-        {
-            id: 1,
-            etiqueta: 'Remeras',
-            seleccionado: false
-        },
-        {
-            id: 2,
-            etiqueta: 'Pantalones',
-            seleccionado: false
-        },
-        {
-            id: 3,
-            etiqueta: 'Vestidos',
-            seleccionado: false
-        },
-        {
-            id: 4,
-            etiqueta: 'Accesorios',
-            seleccionado: false
-        }
-    ];
-
-    /*
-    funciones para manejar la lista de botones y el click de cada uno
-    */
-    const[listaBotones, setBotones] = useState(botones);
-    
-    const cambioCategoria = (categoryId,seleccionado) => {
-        if (!seleccionado){
-            const botonesActualizados = listaBotones.map(boton => {
-                if (boton.id === categoryId){
-                    boton.seleccionado = true;
-                }else{
-                    boton.seleccionado = false;
-                }
-                return boton;
-            });
-
-            setBotones(botonesActualizados);
-        }
-      }
 
     /*
     navBar
@@ -58,20 +14,31 @@ function NavBar(props){
     Logo
     Lista de botones del menu: utilizando el state correspondiente
     cartWidget: le pasa la cantidad de productos que debe recibir del cart
-    */  
+    */
+
+    const[listaBotones, setProductos] = useState([]);
+    const[loadingCat, setLoadingCat] = useState(true);
+
+    useEffect(()=>{
+        setLoadingCat(true);
+        getCategories()
+            .then((cat)=>{setProductos(cat)})
+            .catch((error) => console.log(error))
+            .finally(()=>setLoadingCat(false)) 
+    },[])
+
     return(
         <div id='navBar' className='NavBar'>
             <NavLogo/>
             <div id='navCategories' className='Categories'>
-                {
+            {loadingCat ? <Loader ancho={30}/> :
                 listaBotones.map((boton) =>
-                    <NavBoton
-                        key={boton.id}
-                        id={boton.id}
-                        seleccionado={boton.seleccionado}
-                        handleClick={cambioCategoria}
-                    >{boton.etiqueta}</NavBoton>
-                    )
+                <NavBoton
+                    key={boton.id}
+                    dirUrl={`/category/${boton.id}`}
+                    etiqueta={boton.etiqueta}
+                />
+                )
                 }
             </div> 
             <CartWidget>{props.cantProducts}</CartWidget>

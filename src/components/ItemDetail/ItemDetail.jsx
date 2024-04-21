@@ -7,7 +7,6 @@ function ItemDetail({nombre, isbn, editorial, autor, stock, precio, foto, descri
   const onAdd = (cantidad) => {
     console.log(`cantidad agregada: ${cantidad}`)
   }
-
   return (
     <div className='itemDetail'>
       <h3>{ nombre }</h3>

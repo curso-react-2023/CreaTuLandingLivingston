@@ -55,7 +55,7 @@ export const productos = [
         autor: 'FOLLETT, KEN',
         publicacion: '2023',
         stock:3,
-        precio: 20000,
+        precio: 48499,
         destacado: 0
     },
     {
@@ -70,8 +70,8 @@ export const productos = [
         editorial: 'DEBOLSILLO',
         autor: 'HERBERT, FRANK',
         publicacion: '2023',
-        stock:6,
-        precio: 20000,
+        stock:0,
+        precio: 43000,
         destacado: 1
     },
     {
@@ -87,7 +87,7 @@ export const productos = [
         autor: 'HERBERT, FRANK',
         publicacion: '2021',
         stock:8,
-        precio: 20000,
+        precio: 45000,
         destacado: 0
     },
     {
@@ -103,7 +103,7 @@ export const productos = [
         autor: 'ORWELL, GEORGE',
         publicacion: '2021',
         stock:12,
-        precio: 20000,
+        precio: 13900,
         destacado: 0
     },
     {
@@ -119,7 +119,7 @@ export const productos = [
         autor: 'KING, STEPHEN',
         publicacion: '2023',
         stock:7,
-        precio: 20000,
+        precio: 31199,
         destacado: 0
     },
     {
@@ -135,7 +135,7 @@ export const productos = [
         autor: 'MOLDES, GERMAN',
         publicacion: '2022',
         stock:3,
-        precio: 20000,
+        precio: 17900,
         destacado: 0
     },
     {
@@ -151,7 +151,7 @@ export const productos = [
         autor: 'PIGNA, FELIPE',
         publicacion: '2023',
         stock:5,
-        precio: 20000,
+        precio: 27500,
         destacado: 1
     },
     {
@@ -167,7 +167,7 @@ export const productos = [
         autor: 'ZUBIZARRETA, IGNACIO',
         publicacion: '2021',
         stock:3,
-        precio: 20000,
+        precio: 19799,
         destacado: 0
     },
     {
@@ -183,7 +183,7 @@ export const productos = [
         autor: 'PIGNA, FELIPE',
         publicacion: '2022',
         stock:3,
-        precio: 20000,
+        precio: 18000,
         destacado: 1
     },
     {
@@ -199,17 +199,17 @@ export const productos = [
         autor: 'BEARD, MARY',
         publicacion: '2023',
         stock:7,
-        precio: 20000,
+        precio: 27500,
         destacado: 0
     },
     {
         id: 11,
-        nombre: 'Uma y Sapo 2',
+        nombre: 'Donde esta Bluey?',
         categoria: 3,
-        foto:'uma_y_sapo_2',
-        isbn: '9789504672012',
+        foto:'bluey',
+        isbn: '9789877364293',
         tematica: 'Manuales y multiáreas',
-        descripcion: 'Las nuevas áreas integradas para disfrutar acompañados por dos simpáticos amigos: Uma y Sapo. Una propuesta con un enfoque equilibrado que intensifica los conocimientos en las áreas de Prácticas del lenguaje y Matemática, mientras guía en la reflexión de los propios aprendizajes, allanando el camino hacia una sólida comprensión de saberes. Además, abraza las recomendaciones más recientes de los ministerios de educación y se compromete a fortalecer pilares fundamentales como la lectura, la EAI y la ESI',
+        descripcion: 'También hay muchas más cosas ocultas, íasí que únete a la diversión en este libro de busca y encuentra!',
         idioma: 'Español / Castellano',
         editorial: 'SANTILLANA EDITORIAL S.A.',
         autor: 'N/A',
@@ -224,14 +224,14 @@ export const productos = [
         categoria: 3,
         foto:'percy_jackson',
         isbn: '9789878001890',
-        tematica: 'Manuales y multiáreas',
+        tematica: 'Pasatiempos, adivinanzas y juegos',
         descripcion: 'Después de salvar el mundo en múltiples ocasiones luchando contra monstruos, titanes y gigantes, Percy quiere terminar su último curso de instituto sin sobresaltos. Pero, para acceder a la Universidad de la Nueva Roma, tendrá que cumplir tres misiones de los dioses y obtener así las cartas de recomendación necesarias. La primera tarea consiste en ayudar a Ganímedes, el copero de Zeus, a recuperar su cáliz de oro antes de que caiga en manos de algún humano. Y es que un sorbo del cáliz puede convertir a un mortal en dios, lo que provocaría la cólera de Zeus. ¿Podrán Percy, Grover y Annabeth encontrar la preciada copa a tiempo? Y, en caso de conseguirlo, ¿lograrán resistirse a su poder?',
         idioma: 'Español / Castellano',
-        editorial: 'SALAMANDRA',
-        autor: 'RIORDAN, RICK',
+        editorial: 'ALTEA',
+        autor: 'N/A',
         publicacion: '2023',
         stock:7,
-        precio: 20000,
+        precio: 6299,
         destacado: 1
     },
     {
@@ -247,21 +247,21 @@ export const productos = [
         autor: 'SAINT-EXUPERY, ANTOINE DE',
         publicacion: '2021',
         stock:10,
-        precio: 20000,
+        precio: 6699,
         destacado: 0
     },
     {
         id: 14,
-        nombre: 'Uma y Sapo 1',
+        nombre: 'Diario de un Ogro',
         categoria: 3,
-        foto:'uma_y_sapo_1',
-        isbn: '9789504672043',
-        tematica: 'Manuales y multiáreas',
-        descripcion: 'Las nuevas áreas integradas para disfrutar acompañados por dos simpáticos amigos: Uma y Sapo. Una propuesta con un enfoque equilibrado que intensifica los conocimientos en las áreas de Prácticas del lenguaje y Matemática, mientras guía en la reflexión de los propios aprendizajes, allanando el camino hacia una sólida comprensión de saberes. Además, abraza las recomendaciones más recientes de los ministerios de educación y se compromete a fortalecer pilares fundamentales como la lectura, la EAI y la ESI',
+        foto:'ogro',
+        isbn: '9789873681431',
+        tematica: 'Literatura infantil y juvenil',
+        descripcion: 'Este es el diario íntimo de un ogro que se cansó de asustar niñas y niños y decidió abrir una escuela para pequeños ogros. No te pierdas sus desventuras contadas en rima y en clave de humor. Este es el octavo título que completa la exitosa colección Querido Diario, que ha resultado una de las preferidas de niños, padres y docentes.',
         idioma: 'Español / Castellano',
-        editorial: 'SANTILLANA EDITORIAL S.A.',
-        autor: 'N/A',
-        publicacion: '2024',
+        editorial: 'LA BRUJITA DE PAPEL',
+        autor: 'DAVILA, VALERIA',
+        publicacion: '2016',
         stock:1,
         precio: 20000,
         destacado: 0
@@ -279,7 +279,7 @@ export const productos = [
         autor: 'ROWLING, J. K.',
         publicacion: '2020',
         stock:14,
-        precio: 20000,
+        precio: 16699,
         destacado: 1
     },
     {
@@ -295,7 +295,7 @@ export const productos = [
         autor: 'KIAKO, NATALIA',
         publicacion: '2023',
         stock:6,
-        precio: 20000,
+        precio: 38199,
         destacado: 0
     },
     {
@@ -311,7 +311,7 @@ export const productos = [
         autor: 'N/A',
         publicacion: '2023',
         stock:8,
-        precio: 20000,
+        precio: 14199,
         destacado: 0
     },
     {
@@ -327,7 +327,7 @@ export const productos = [
         autor: 'OSEMAN, ALICE',
         publicacion: '2021',
         stock:5,
-        precio: 20000,
+        precio: 11000,
         destacado: 0
     },
     {
@@ -343,7 +343,7 @@ export const productos = [
         autor: 'N/A',
         publicacion: '2023',
         stock:5,
-        precio: 20000,
+        precio: 33000,
         destacado: 0
     }
 ];

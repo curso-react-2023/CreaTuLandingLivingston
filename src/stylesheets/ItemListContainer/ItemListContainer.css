@@ -1,11 +1,6 @@
 .itemListContainer{
     display: flex;
-    padding-top: 20px;
     justify-content: center;
     align-items:center;
-}
-
-.bienvenida{
-    width: 70%;
-    text-align: center;
+    
 }

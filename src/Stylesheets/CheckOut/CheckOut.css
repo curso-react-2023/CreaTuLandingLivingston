@@ -1,0 +1,63 @@
+.flexContainer{
+    width: 100%; 
+    min-height: 500px;   
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.tableContainer{
+    height:300px;
+    border: 2px solid #BDE9E3;
+    padding: 25px;
+}
+
+.formTable{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8em;
+}
+
+.formTitle{
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-bottom: 7px;
+}
+
+.formTableBody{
+    padding: 5px;
+}
+
+.inputTexto{
+    height: 30px;
+    font-size: .9em;
+    width: 300px;
+}
+
+.botonGeneral{
+    width: 120px;
+    height: 21px;
+    color: black;
+    border-radius: 8px;
+    background-color: #AAC0BC;
+    margin: 0 15px 0 15px;
+}
+
+.icono{
+    width: 15px;
+    height: 15px;
+}
+
+.invisible{
+    display:none;
+}
+
+.mensajeNoProductos{
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+}

@@ -1,20 +1,28 @@
-.NavBar {
+.navContainer {
     min-width: 768px;
     display: flex;
     height: 100px;
-    background-color: #BDE9E3;
     padding-right: 10px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    background-color: #BDE9E3;
 
 }
 
+.NavBar{
+    min-width: 768px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
 .Categories{
     min-width: 468px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 15px;
     padding-right: 15px;
 }

@@ -1,4 +1,4 @@
-import '../../stylesheets/ItemList/ItemList.css';
+import '../../Stylesheets/ItemList/ItemList.css';
 import ItemListCard from './ItemListCard';
 import Loader from "../Loader/Loader";
 

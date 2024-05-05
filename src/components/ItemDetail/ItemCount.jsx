@@ -1,5 +1,5 @@
 import React from "react";
-import '../../stylesheets/ItemDetail/ItemCount.css';
+import '../../Stylesheets/ItemDetail/ItemCount.css';
 import useCounter from "../../Hooks/useCounter";
 
 const ItemCount = ({ stock, onAdd }) => {
@@ -16,7 +16,6 @@ const ItemCount = ({ stock, onAdd }) => {
         <button className='counterAddCart' onClick={()=>onAdd(cantidad)}>Agregar al carrito</button>
     </div>
     )
-
 }
 
 export default ItemCount;

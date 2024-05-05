@@ -1,9 +1,11 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
-import '../../stylesheets/ItemListContainer/ItemListContainer.css'
+import '../../Stylesheets/ItemListContainer/ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
 import Loader from "../Loader/Loader";
-import { getProductosPorCategoria } from '../../data/AsyncMock';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../Config/FireBase';
+
 /*
 Contenedor de la lista de productos,  maneja estado de los productos
 */
@@ -19,15 +21,32 @@ function ItemListContainer(){
 
     useEffect(()=>{
         setLoading(true);
-        getProductosPorCategoria(idCategoria)
-            .then((cat)=>{setProductos(cat)})
-            .catch((error) => console.log(error))
-            .finally(()=>setLoading(false)) 
+        const getData = async () =>{
+            const coleccion = collection(db,'productos');
+            const queryRef = !idCategoria ?
+                                query(coleccion,where('destacado','==',0))
+                                :
+                                query(coleccion,where('categoria','==',idCategoria))
+
+            const response = await getDocs(queryRef);
+
+            const productos = response.docs.map((prod)=>{
+                const newProd={
+                    ...prod.data(),
+                    id:prod.id
+                }
+                return newProd;
+            })
+            setProductos(productos);
+            setLoading(false);
+        }
+
+        getData(); 
     },[idCategoria])
 
     return(
         <div id='itemListContainer' className='itemListContainer'>
-            {loading ? <Loader ancho={70}/> :
+            {loading ? <div className='loaderContainer'><Loader ancho={70}/></div> :
             <ItemList
                 listaProductos={listaProductos}/>
             }

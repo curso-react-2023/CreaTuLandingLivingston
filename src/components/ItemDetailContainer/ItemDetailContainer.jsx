@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
-import { getProductoPorId } from '../../data/AsyncMock';
-import '../../stylesheets/ItemDetailContainer/ItemDetailContainer.css'
-import ItemDetail from '../ItemDetail/ItemDetail'
-
+import '../../Stylesheets/ItemDetailContainer/ItemDetailContainer.css';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../Config/FireBase';
 /*
 Contenedor de la lista de productos, 
 props:
@@ -25,12 +25,18 @@ function ItemListContainer(){
 
     useEffect(()=>{
         setLoadingProducto(true);
-        getProductoPorId(idProducto)
-            .then((prod)=>{
-                setProducto(prod) 
-            })
-            .catch((error) => console.log(error))
-            .finally(()=>setLoadingProducto(false)) 
+        const getProduct = async () =>{
+            const queryRef = doc(db,'productos', idProducto);
+            const response = await getDoc(queryRef);
+            const newItem = {
+                ...response.data(),
+                id: response.id
+            }
+            setProducto(newItem); 
+            setLoadingProducto(false);
+        }
+        getProduct(); 
+         
     },[idProducto])
 
 

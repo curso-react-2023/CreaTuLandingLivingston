@@ -20,3 +20,13 @@
     align-items: center;
     text-align: center;
 }
+
+.cartLink{
+    width: 30px;
+    color: black;
+}
+
+.cartNoLink{
+    width: 30px;
+    color: grey;
+}

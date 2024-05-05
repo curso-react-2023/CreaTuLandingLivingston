@@ -1,0 +1,24 @@
+.cartContainer{
+    width: 80%;
+    border: 1px solid #BDE9E3;
+}
+
+.cartListButton{
+    width: 30px;
+}
+
+.botonGeneral{
+    width: 120px;
+    height: 21px;
+    color: black;
+    border-radius: 8px;
+    background-color: #AAC0BC;
+    margin: 0 15px 0 15px;
+}
+
+.sinProductos{
+    text-align: center;
+    padding: 50px 0 50px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}

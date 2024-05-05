@@ -1,4 +1,4 @@
-import '../../stylesheets/PageNotFound/PageNotFound.css';
+import '../../Stylesheets/PageNotFound/PageNotFound.css';
 
 /* Pagina para error de ruta*/
 

@@ -6,30 +6,35 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Footer from './components/Footer/Footer';
 import PageNotFound from './components/PageNotFound/PageNotFound'
-
+import { CartProvider } from "./context/CartContext";
+import Cart from "./components/Cart/Cart";
+import { ChakraProvider } from "@chakra-ui/react";
+import CheckOut from "./components/CheckOut/CheckOut";
 
 /*
 Punto principal, presenta la navBar y el Item list container
 */
 
 function App() {
-    
-  const[cartCantProducts, setCantProducts] = useState(2);
-
+ 
   return (
     <div id='App' className='App'>
-      <BrowserRouter>
-      <NavBar
-      cantProducts={cartCantProducts}
-      />
-        <Routes>
-          <Route path='/' element={<ItemListContainer/>}/>
-          <Route path='/category/:idCategoria' element={<ItemListContainer/>}/>
-          <Route path='/product/:idProducto' element={<ItemDetailContainer/>}/>
-          <Route path='*' element={<PageNotFound/>}/>
-        </Routes>
-      <Footer/>
-    </BrowserRouter>
+      <ChakraProvider>
+      <CartProvider>
+          <BrowserRouter>
+            <NavBar/>
+            <Routes>
+              <Route path='/' element={<ItemListContainer/>} breadCrumb='categoryName'/>
+              <Route path='/category/:idCategoria' element={<ItemListContainer/>} breadCrumb='Home > categoryName'/>
+              <Route path='/product/:idProducto' element={<ItemDetailContainer/>} breadCrumb='Home > categoryName > productName'/>
+              <Route path='/cart' element={<Cart/>}/>
+              <Route path='/checkOut' element={<CheckOut/>}/>
+              <Route path='*' element={<PageNotFound/>}/>
+            </Routes>
+        </BrowserRouter>
+    </CartProvider>
+    <Footer/>
+    </ChakraProvider>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import '../../stylesheets/Footer/Footer.css'
+import '../../Stylesheets/Footer/Footer.css'
 function Footer() {
     return(
         <div className='footerContainer'>

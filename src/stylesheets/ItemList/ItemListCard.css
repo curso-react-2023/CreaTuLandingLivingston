@@ -59,3 +59,8 @@
 .listCardAmpliarLink{
     color: black;
 }
+
+.noStock{
+    font-weight: bold;
+    text-align: center;
+}

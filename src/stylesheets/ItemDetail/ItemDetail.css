@@ -40,4 +40,24 @@
 
 .itemFeatureCart{
     padding-left:50px;
+    padding-top: 5px;
+}
+
+.verCarrito{
+    width: 100px;
+    height: 21px;
+    color: black;
+    border-radius: 8px;
+    background-color: #AAC0BC;
+}
+
+.noStock{
+    font-weight: bold;
+}
+
+.nombreProducto{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 3px;
 }

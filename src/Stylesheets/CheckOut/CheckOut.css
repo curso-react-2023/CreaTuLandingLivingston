@@ -61,3 +61,13 @@
     flex-wrap: wrap;
     text-wrap: wrap;
 }
+
+.msgFinal{
+    display: flex;
+    width: 580px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    text-align: justify;
+    
+}

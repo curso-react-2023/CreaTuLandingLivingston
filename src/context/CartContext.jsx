@@ -54,10 +54,20 @@ export const CartProvider = ({ children }) => {
         return Cart.some((producto)=>producto.id===id);
     }
 
+    const updateProduct = (dataToUpdate, value, id) =>{
+        const updatedCart = Cart.map((prod) => {
+            if(prod.id === id) {
+                return { ...prod, [dataToUpdate]: value}
+            }
+            return el
+        })
+        console.log(updatedCart)
+        setCart(updatedCart)
+    }
     
 
     return(
-        <CartContext.Provider value={{ Cart, addItem, removeItem, removeAllItems, countItems, alreadyOnCart, totalAmount, changeQuantity }}>
+        <CartContext.Provider value={{ Cart, addItem, removeItem, removeAllItems, countItems, alreadyOnCart, totalAmount, changeQuantity, updateProduct }}>
             { children }
         </CartContext.Provider>
     )

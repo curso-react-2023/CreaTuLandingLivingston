@@ -1,15 +1,20 @@
 import React, { useContext, useState } from 'react';
 import '../../Stylesheets/CheckOut/CheckOut.css';
-import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer, Flex, Input, Select } from '@chakra-ui/react'
+import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer, Flex, Input, Select, useDisclosure } from '@chakra-ui/react'
 import { FcCancel, FcOk } from 'react-icons/fc';
 import { cuilValidator, emptyField, invalidEmail, unverifiedData, validatePhone } from '../Validations/Validations';
 import { CartContext } from '../../context/CartContext';
 import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../Config/FireBase';
+import {  Modal,  ModalOverlay,  ModalContent,  ModalHeader,  ModalFooter,  ModalBody,  ModalCloseButton, } from '@chakra-ui/react'
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const CheckOut = () => {
-    const { Cart, countItems, totalAmount } = useContext(CartContext);
-    
+    const { Cart, countItems, totalAmount, updateProduct, removeAllItems } = useContext(CartContext);
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const navigate = useNavigate();
+
     const [buyData, setBuyData] = useState({
       name: '',
       email: '',
@@ -89,13 +94,13 @@ const CheckOut = () => {
           const productRef = doc(db,'productos',item.id);
           const producto = await getDoc(productRef);
           const currentStock = producto.data().stock;
-
+          
           if(item.cantidad <= currentStock){
             await updateDoc(productRef,{stock:currentStock-item.cantidad});
+            updateProduct ('faltanteStock', false, item.id)
           }else{
             await updateDoc(productRef,{stock:0});
-            //falta agregar al producto la leyenda de sin stock
-            //item.productoConFaltante='si';
+            updateProduct ('faltanteStock', true, item.id);
             ordenCompleta=false;
           }
         }
@@ -110,12 +115,33 @@ const CheckOut = () => {
         const ordersCollection = collection(db,'orders');
         
         const orderDocRef = await addDoc(ordersCollection,newOrder);
-  
-        console.log(orderDocRef.id);
-        console.log(ordenCompleta?'Su orden se genero correctamente':'Su orden tiene productos con stock faltante.');
+             
+        console.log(ordenCompleta);
+        
+        const resultadoFinal = ordenCompleta?'Nos pondremos en contacto con usted en las proximas 48hs habiles para coordinar la entrega.'
+        :'Al menos un producto <b>no tiene stock disponible</b>, nos comunicaremos con usted en las proximas 48hs habiles para verificar esta situacion y coordinar la entrega'
+
+        Swal.fire({
+          width: '650px',
+          allowOutsideClick: false,
+          title: 'Gracias por tu compra',
+          html: `<div class="msgFinal">
+                    <div>Su orden se genero correctamente, el Nro de remito es: <b>${orderDocRef.id}</b></div>
+                    <div>Por favor tome nota del mismo antes de cerrar la ventana ya que es la referencia que se le solicitara para cualquier consulta sobre la operacion.
+                    </div>
+                    <div>${resultadoFinal}</div>
+                 </div>`,
+          icon: 'success',
+          backdrop: true,
+          confirmButtonText: 'Cerrar',
+        }).then(()=> {
+          removeAllItems();
+          navigate('/');
+        })
+ 
       }
       catch(error){
-        console.log('Hubo un error en la generacion de su orden.');
+        console.log(`Hubo un error en la generacion de su orden.${error}`);
       }
     }
     
@@ -205,8 +231,8 @@ const CheckOut = () => {
          :
         <div className='mensajeNoProductos'>No hay productos en el carrito, 
                                             por favor agregue al carrito los productos que desea comprar.</div>
-      }
-      </TableContainer>
+       }
+      </TableContainer> 
     </Flex>
     )
 }

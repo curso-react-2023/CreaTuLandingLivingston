@@ -6,13 +6,11 @@ import { cuilValidator, emptyField, invalidEmail, unverifiedData, validatePhone 
 import { CartContext } from '../../context/CartContext';
 import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../Config/FireBase';
-import {  Modal,  ModalOverlay,  ModalContent,  ModalHeader,  ModalFooter,  ModalBody,  ModalCloseButton, } from '@chakra-ui/react'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 const CheckOut = () => {
-    const { Cart, countItems, totalAmount, updateProduct, removeAllItems } = useContext(CartContext);
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { Cart, countItems, totalAmount, removeAllItems } = useContext(CartContext);
     const navigate = useNavigate();
 
     const [buyData, setBuyData] = useState({
@@ -87,6 +85,7 @@ const CheckOut = () => {
       const today = new Date();
       const fechaCompra = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
       let ordenCompleta = true;
+      let conStok=true;
 
       try{
 
@@ -94,30 +93,28 @@ const CheckOut = () => {
           const productRef = doc(db,'productos',item.id);
           const producto = await getDoc(productRef);
           const currentStock = producto.data().stock;
-          
+
           if(item.cantidad <= currentStock){
             await updateDoc(productRef,{stock:currentStock-item.cantidad});
-            updateProduct ('faltanteStock', false, item.id)
           }else{
             await updateDoc(productRef,{stock:0});
-            updateProduct ('faltanteStock', true, item.id);
             ordenCompleta=false;
           }
         }
+
         const newOrder = {
           comprador: buyData,
           productos: Cart,
           cantidadProductos: countItems(),
           totalCompra: totalAmount(),
-          fechaCompra: today
+          fechaCompra: today,
+          completeOrder: ordenCompleta
         }
   
         const ordersCollection = collection(db,'orders');
         
         const orderDocRef = await addDoc(ordersCollection,newOrder);
-             
-        console.log(ordenCompleta);
-        
+
         const resultadoFinal = ordenCompleta?'Nos pondremos en contacto con usted en las proximas 48hs habiles para coordinar la entrega.'
         :'Al menos un producto <b>no tiene stock disponible</b>, nos comunicaremos con usted en las proximas 48hs habiles para verificar esta situacion y coordinar la entrega'
 
@@ -141,7 +138,18 @@ const CheckOut = () => {
  
       }
       catch(error){
-        console.log(`Hubo un error en la generacion de su orden.${error}`);
+        Swal.fire({
+          width: '650px',
+          allowOutsideClick: false,
+          title: 'Su compra no pudo ser procesada correctamente.',
+          html: `<div class="msgFinal">
+                    <div>Su orden no pudo generarse correctamente, por favor espere unos minutos y vuellva a intentarlo.</div>
+                    <div>En caso de continuar el problema contactenos, gracias y disculpe las molestias.</div>
+                 </div>`,
+          icon: 'success',
+          backdrop: true,
+          confirmButtonText: 'Cerrar',
+        })
       }
     }
     

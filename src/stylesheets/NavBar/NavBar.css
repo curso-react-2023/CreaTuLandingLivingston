@@ -10,15 +10,6 @@
 
 }
 
-.NavBar{
-    min-width: 768px;
-    display: flex;
-    flex-wrap: wrap;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
 .Categories{
     min-width: 468px;
     display: flex;

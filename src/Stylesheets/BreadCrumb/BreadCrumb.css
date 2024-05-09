@@ -1,8 +1,0 @@
-.navBreadCrumbContainer{
-    display:flex;
-}
-.navBreadCrumb{
-    height: 20px;
-    font-size: .8em;
-    flex-basis: fit-content;
-}

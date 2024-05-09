@@ -24,7 +24,7 @@ function ItemListContainer(){
         const getData = async () =>{
             const coleccion = collection(db,'productos');
             const queryRef = !idCategoria ?
-                                query(coleccion,where('destacado','==',0))
+                                query(coleccion,where('destacado','==',1))
                                 :
                                 query(coleccion,where('categoria','==',idCategoria))
 

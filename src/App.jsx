@@ -24,12 +24,12 @@ function App() {
           <BrowserRouter>
             <NavBar/>
             <Routes>
-              <Route path='/' element={<ItemListContainer/>} breadCrumb='categoryName'/>
-              <Route path='/category/:idCategoria' element={<ItemListContainer/>} breadCrumb='Home > categoryName'/>
-              <Route path='/product/:idProducto' element={<ItemDetailContainer/>} breadCrumb='Home > categoryName > productName'/>
-              <Route path='/cart' element={<Cart/>}/>
-              <Route path='/checkOut' element={<CheckOut/>}/>
-              <Route path='*' element={<PageNotFound/>}/>
+              <Route path='/' element={<ItemListContainer/>} />
+              <Route path='/category/:idCategoria' element={<ItemListContainer/>} />
+              <Route path='/product/:idProducto' element={<ItemDetailContainer/>} />
+              <Route path='/cart' element={<Cart/>} />
+              <Route path='/checkOut' element={<CheckOut/>} />
+              <Route path='*' element={<PageNotFound/>} />
             </Routes>
         </BrowserRouter>
     </CartProvider>

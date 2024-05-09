@@ -40,7 +40,7 @@ const ItemDetail = ({id, nombre, isbn, editorial, autor, stock, precio, foto, de
             <div>Item ya agregado, <Link to='/cart' ><button className='verCarrito'>ver carrito</button></Link></div>
             :
               stock > 0 ? 
-              <ItemCount stock={10} valorInicial={1} onAdd={onAdd}/>
+              <ItemCount stock={stock} valorInicial={1} onAdd={onAdd}/>
               :
               <div className='noStock'>Stock agotado.</div>
             }

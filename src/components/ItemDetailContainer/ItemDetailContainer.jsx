@@ -22,7 +22,6 @@ function ItemListContainer(){
     const[producto, setProducto] = useState([]);
     const[loadingProducto, setLoadingProducto] = useState(true);
 
-
     useEffect(()=>{
         setLoadingProducto(true);
         const getProduct = async () =>{

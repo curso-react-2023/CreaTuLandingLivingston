@@ -4,7 +4,6 @@ import NavBoton from './NavBoton';
 import NavLogo from './NavLogo';
 import CartWidget from '../CartWidget/CartWidget';
 import Loader from "../Loader/Loader";
-import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import { db } from "../../Config/FireBase";
 import { collection, getDocs } from "firebase/firestore";
 
@@ -45,20 +44,17 @@ function NavBar(){
         <>
         <div className='navContainer'>
             <NavLogo/>
-            <div id='navBar' className='NavBar'>
-                <div id='navCategories' className='Categories'>
-                {loadingCat ? <Loader ancho={30}/> :
-                    listaBotones.map((boton) =>
-                    <NavBoton
-                        key={boton.id}
-                        dirUrl={`/category/${boton.id}`}
-                        etiqueta={boton.etiqueta}
-                    />
-                    )
-                    }
-                </div>                
-                <BreadCrumb/>    
-            </div>
+            <div id='navCategories' className='Categories'>
+            {loadingCat ? <Loader ancho={30}/> :
+                listaBotones.map((boton) =>
+                <NavBoton
+                    key={boton.id}
+                    dirUrl={`/category/${boton.id}`}
+                    etiqueta={boton.etiqueta}
+                />
+                )
+                }
+            </div>                    
             <CartWidget/>
         </div>
         

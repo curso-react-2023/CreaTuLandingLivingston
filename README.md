@@ -3,7 +3,7 @@
 Es una tienda online de libros, busca acercar al publico la mayor variedad de libros posibles a precios accesibles.
 El proyecto fue desarrollado con ViteJs, Firebase, y Chakra, utilizando Firestore como base de datos.
 
-[!screeshot] (/mkdown/portada.png)
+[!screeshot] (mkdown/portada.png)
 
 ## Tecnologias utilizadas
 ![Static Badge](https://img.shields.io/badge/ReactJS%20-%201234?style=plastic&logo=react&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/FireStore%20-%201234?style=plastic&logo=firebase&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/Chakra%20UI%20-%201234?style=plastic&logo=chakraui&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/Vite%20-%201234?style=plastic&logo=vite&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/React%20Router-%201234?style=plastic&logo=reactrouter&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/Sweet%20Alert%202-%201234?style=plastic&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB)

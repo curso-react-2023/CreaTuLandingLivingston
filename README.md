@@ -3,6 +3,8 @@
 ¡Bienvenido a Funny Books, la tienda de libros mas divertida!
 ![Página de Inicio](/mkdown/portada.png)
 
+![Static Badge](https://img.shields.io/badge/ReactJs%20-%20ReactJS?style=plastic&labelColor=AAC0BC&color=AAC0BC)
+
 ## Descripción del Proyecto
 
 Este proyecto es una tienda en línea donde los usuarios pueden explorar una variedad de productos y realizar compras de forma segura.

@@ -1,7 +1,7 @@
 # Tienda de eCommerce con React
 
 ¡Bienvenido a Funny Books, la tienda de libros mas divertida!
-(/screenshots/homepage.png)
+![Página de Inicio](/mkdown/portada.png)
 
 ## Descripción del Proyecto
 

@@ -1,8 +1,18 @@
-# React + Vite
+# Funny Books!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Es una tienda online de libros, busca acercar al publico la mayor variedad de libros posibles a precios accesibles.
+El proyecto fue desarrollado con ViteJs, Firebase, y Chakra, utilizando Firestore como base de datos.
 
-Currently, two official plugins are available:
+(/screenshots/homepage.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias utilizadas
+![Static Badge](https://img.shields.io/badge/ReactJS%20-%201234?style=plastic&logo=react&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/FireStore%20-%201234?style=plastic&logo=firebase&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/Chakra%20UI%20-%201234?style=plastic&logo=chakraui&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/Vite%20-%201234?style=plastic&logo=vite&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/React%20Router-%201234?style=plastic&logo=reactrouter&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB) ![Static Badge](https://img.shields.io/badge/Sweet%20Alert%202-%201234?style=plastic&logoColor=ffffff&labelColor=%2361DAFB&color=%2361DAFB)
+
+## Descripción del Proyecto
+
+La aplicacion esta desarrollada como spa (single page application), utilizando ReactJS como tecnologia principal, cuenta con un catalogo de productos, que en la home trae los productos designados como destacados creando una opcion para mostrar aquellos productos que se desea impulsar, luego la navegacion del mismo es por categoria.
+Cada producto tiene un detalle que permite ver los datos completos y acceder a realizar el pedido del mismo ingresandolo al carrito.
+El carrito de compras contiene la lista de productos ingresados y permite modificar la cantidad de los mismos, quitar uno o todos los productos agregados, o ir al checkout para finalizar la compra.
+Finalmente el checkout solicita datos de facturacion y contacto para finalizar la compra registrando la orden, en caso de que al momento de generar la orden el stock de alguno de los productos solicitados no cubra el pedido, la orden se genera y se le comunica al cliente la situacion indicandole que se comunicaran con el para resolverlo.
+
+##### Visitanos ingresando a: ppp 

@@ -15,4 +15,6 @@ Cada producto tiene un detalle que permite ver los datos completos y acceder a r
 El carrito de compras contiene la lista de productos ingresados y permite modificar la cantidad de los mismos, quitar uno o todos los productos agregados, o ir al checkout para finalizar la compra.
 Finalmente el checkout solicita datos de facturacion y contacto para finalizar la compra registrando la orden, en caso de que al momento de generar la orden el stock de alguno de los productos solicitados no cubra el pedido, la orden se genera y se le comunica al cliente la situacion indicandole que se comunicaran con el para resolverlo.
 
-##### Visitanos ingresando a: ppp 
+### Instalacion
+
+Para instalar la aplicacion clonar el repositorio y crear las variables de entorno que se especifican en el archivo sample_env.txt con los valores correspondientes.
